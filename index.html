@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" type="text/css" href="style.css" media="screen" />
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <title>Poopcoin</title>
+</head>
+<script type="text/javascript">
+   let clicks = 0;
+   let boosts = 1;
+   let clickss = 1;
+   let price_boosts = 10; 
+   let num_click = 1;// change int to var here
+   function countClicks() {
+      let clicks_def = clickss;
+        clicks += clicks_def;
+        document.getElementById("clicks").innerHTML = clicks;
+    };
+    function buyboostclick(){
+      if (clicks >= price_boosts) {
+        clicks -= price_boosts;
+        clickss += num_click;
+        boosts += 1;
+        num_click *= 1.5;
+        price_boosts *= 4;
+        alert("Вы успешно улучшили кликер до " +  boosts)
+      }
+      else{
+        alert("Недостаточно средств!")
+      }
+    }
+</script>
+<body>
+    <div class="svet"></div>
+    <input type="image" class="coin" src="poopcoin.png" onClick="countClicks()" alt="Кнопка «input»">
+    <p class="click"><a id="clicks" class="clicks">0</a></p>
+   <section class="menu">
+    <button class="shopbutton" ><a href="#zatemnenie" >SHOP</a></button>
+    <button class="shopbutton" id="oneb">Penis</button>
+    <button class="shopbutton" id="toob">Test</button>
+   </section>
+
+   <div id="zatemnenie">
+    <div id="okno">
+      <p class="shops">SHOP SOON</p><br>
+      <button class="button_in_shop" ><a href="#info" >boost click</a></button>
+      <div class="infoboost">
+        <td id="boosts"></td>
+      </div>
+      <a href="#" class="close"></a>
+    </div>
+  </div>
+  
+  <div id="info">
+    <div id="inf">
+      <div class="info_text">
+        <div class="info_boost">
+        <p id="boosts_lvl"></p>
+        <p id="price_boost"></p>
+        <p id="click_up""></p>
+      </div>
+      </div>
+
+        <h1>BOOST CLICKS</h1>
+        <p id="boosts"></p>
+      </div>
+    
+      <button class="upbutton" onclick='buyboostclick()''>Up</button>
+      <a href="#zatemnenie" class="close"></a>
+    </div>
+  </div>
+  <script>
+    document.getElementById("boosts_lvl").innerHTML = "Уровень буста - " + boosts;
+    document.getElementById("price_boost").innerHTML = "Цена буста - " +  price_boosts;
+    document.getElementById("click_up").innerHTML = "Сколько кликов - " + clickss;
+  </script>
+</body>
+</html>
