@@ -21,9 +21,9 @@ function buyboostclick(){
    if (clicks >= price_boosts) {
      clicks -= price_boosts;
      localStorage.setItem("coins", clicks);
-     clickss += 89789879;
+     clickss += num_click;
      boosts += 1;
-     num_click *= 15675600123;
+     num_click *= 2;
      price_boosts *= 2;
      localStorage.setItem("boosts", boosts);
      localStorage.setItem("clickss", clickss);
