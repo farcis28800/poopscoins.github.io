@@ -11,7 +11,19 @@
 
 <body>
     <div class="svet"></div>
-    <input type="image" class="coin" src="poopcoin.png" onClick="countClicks()" alt="Кнопка «input»">
+    <script>
+      document.getElementById('coin').addEventListener('click', function() {
+        // Добавляем класс для анимации
+        this.classList.add('pressed');
+        
+        // Задержка перед удалением класса
+        setTimeout(() => {
+          this.classList.remove('pressed');
+        }, 300);
+      });
+      </script>
+      
+    <input type="image" class="coin" id="coin" src="poopcoin.png" onClick="countClicks()" alt="Кнопка «input»">
     <p class="click"><a id="clicks" class="clicks">0</a></p>
    <section class="menu">
     <button class="shopbutton" ><a href="#zatemnenie" >Shop</a></button>

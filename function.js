@@ -36,9 +36,19 @@ document.querySelector('.coin').addEventListener('touchstart', function() {
   this.classList.toggle('touch');
 });
 
-document.addEventListener('click', function(e) {
-  const coin = document.createElement('div');
-  coin.classList.add('coin');
-  document.body.appendChild(coin);
-  coin.style.left = e.clientX + 'px';
+function animateClick() {
+  const coin = document.querySelector('.coin');
+
+  coin.style.transform = 'scale(0.8)';
+  setTimeout(() => { coin.style.transform = 'scale(1)'; }, 200);
+}
+
+const coin = document.querySelector('.coin');
+
+coin.addEventListener('click', () => {
+  coin.style.transform = 'scale(1.1)';
+  
+  setTimeout(() => {
+    coin.style.transform = 'scale(1)';
+  }, 200);
 });
