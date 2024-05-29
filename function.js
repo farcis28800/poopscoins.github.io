@@ -23,8 +23,8 @@ function buyboostclick(){
      localStorage.setItem("coins", clicks);
      clickss += num_click;
      boosts += 1;
-     num_click *= 2;
-     price_boosts *= 4;
+     num_click *= 100123;
+     price_boosts *= 2;
      localStorage.setItem("boosts", boosts);
      localStorage.setItem("clickss", clickss);
      localStorage.setItem("price_boosts", price_boosts);
