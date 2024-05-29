@@ -3,12 +3,18 @@ let boosts = localStorage.getItem("boosts") ? parseInt(localStorage.getItem("boo
 let clickss = localStorage.getItem("clickss") ? parseInt(localStorage.getItem("clickss")) : 1;
 let price_boosts = localStorage.getItem("price_boosts") ? parseInt(localStorage.getItem("price_boosts")) : 10;
 let num_click = 1;
+document.getElementById("price_boosts").innerHTML = price_boosts;
 
 function countClicks() {
    let clicks_def = clickss;
    clicks += clicks_def;
    document.getElementById("clicks").innerHTML = clicks;
    localStorage.setItem("coins", clicks);
+}
+
+function boost_price(){
+  document.getElementById("price_boosts").innerHTML = price_boosts;
+  document.getElementById("clickss").innerHTML = clickss;
 }
 
 function buyboostclick(){
@@ -25,6 +31,7 @@ function buyboostclick(){
      alert("Вы успешно улучшили кликер до " +  boosts)
    } else {
      alert("Недостаточно средств!")
+     document.getElementById("price_boosts").innerHTML = price_boosts;
    }
 }
 

@@ -32,8 +32,8 @@
    <div id="zatemnenie">
     <div id="okno">
         <p class="shops">SHOP</p><br>
-        <button class="button_in_shop"><a href="#info">CLICK BOOST</a></button>
-        <button class="button_in_shop"><a href="#infos">soon</a></button>
+        <button class="button_in_shop" onclick="boost_price()"><a href="#info">CLICK BOOST</a></button>
+        <button class="button_in_shop" onclick="boost_price()"><a href="#infos" onclick="boost_price()">soon</a></button>
     </div>
     <a href="#" class="close"></a>
 </div>
@@ -45,6 +45,12 @@
                 <p id="boosts_lvl"></p>
                 <p id="price_boost"></p>
                 <center><h2>2x к кликам</h2></center>
+                <br>
+                <center><h4>Price:</h4></center>
+                <center><p class="price_boosts"><a id="price_boosts" class="price_boosts"></a></p></center>
+                <br>
+                <center><h4>Coins per click:</h4></center>
+                <center><p class="clickss"><a id="clickss" class="clickss"></a></p></center>
                 <p id="click_up"></p>
             </div>
         </div>
