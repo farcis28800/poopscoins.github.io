@@ -9,7 +9,7 @@ function countClicks() {
    clicks += clicks_def;
    document.getElementById("clicks").innerHTML = clicks;
    localStorage.setItem("coins", clicks);
-};
+}
 
 function buyboostclick(){
    if (clicks >= price_boosts) {
@@ -26,8 +26,19 @@ function buyboostclick(){
    } else {
      alert("Недостаточно средств!")
    }
- }
+}
 
 document.getElementById("boosts_lvl").innerHTML = "Уровень буста - " + boosts;
 document.getElementById("price_boost").innerHTML = "Цена буста - " +  price_boosts;
 document.getElementById("click_up").innerHTML = "Сколько кликов - " + clickss;
+
+document.querySelector('.coin').addEventListener('touchstart', function() {
+  this.classList.toggle('touch');
+});
+
+document.addEventListener('click', function(e) {
+  const coin = document.createElement('div');
+  coin.classList.add('coin');
+  document.body.appendChild(coin);
+  coin.style.left = e.clientX + 'px';
+});
