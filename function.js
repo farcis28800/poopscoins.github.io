@@ -7,9 +7,17 @@ let num_click = 1;
 setInterval(function() {
   let autoClicks = 0; // Количество монет, которое вы хотите добавлять каждую секунду
   clicks += autoClicks;
+  clickss += autoClicks;
+  price_boosts += autoClicks;
   document.getElementById("clicks").innerHTML = clicks;
+  document.getElementById("clickss").innerHTML = clickss;
+  document.getElementById("price_boosts").innerHTML = price_boosts;
   localStorage.setItem("coins", clicks);
+  localStorage.setItem("coinss", clickss);
+  localStorage.setItem("coinsss", price_boosts);
 }, 1); // 1000 миллисекунд = 1 секунда
+
+
 
 
 document.getElementById("price_boosts").innerHTML = price_boosts;
@@ -33,7 +41,7 @@ function buyboostclick(){
      clickss += num_click;
      boosts += 1;
      num_click *= 2;
-     price_boosts *= 3;
+     price_boosts *= 2;
      localStorage.setItem("boosts", boosts);
      localStorage.setItem("clickss", clickss);
      localStorage.setItem("price_boosts", price_boosts);
