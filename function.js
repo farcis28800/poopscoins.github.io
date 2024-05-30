@@ -3,6 +3,15 @@ let boosts = localStorage.getItem("boosts") ? parseInt(localStorage.getItem("boo
 let clickss = localStorage.getItem("clickss") ? parseInt(localStorage.getItem("clickss")) : 1;
 let price_boosts = localStorage.getItem("price_boosts") ? parseInt(localStorage.getItem("price_boosts")) : 10;
 let num_click = 1;
+
+setInterval(function() {
+  let autoClicks = 0; // Количество монет, которое вы хотите добавлять каждую секунду
+  clicks += autoClicks;
+  document.getElementById("clicks").innerHTML = clicks;
+  localStorage.setItem("coins", clicks);
+}, 1); // 1000 миллисекунд = 1 секунда
+
+
 document.getElementById("price_boosts").innerHTML = price_boosts;
 
 function countClicks() {
@@ -29,9 +38,12 @@ function buyboostclick(){
      localStorage.setItem("clickss", clickss);
      localStorage.setItem("price_boosts", price_boosts);
      alert("Вы успешно улучшили кликер до " +  boosts)
+     document.getElementById("price_boosts").innerHTML = price_boosts;
+  document.getElementById("clickss").innerHTML = clickss;
    } else {
      alert("Недостаточно средств!")
      document.getElementById("price_boosts").innerHTML = price_boosts;
+  document.getElementById("clickss").innerHTML = clickss;
    }
 }
 

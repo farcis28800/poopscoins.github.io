@@ -23,9 +23,7 @@ right: 10px;
 
 
 
-input:focus {
-    outline:none;
-}
+
 
 a{
     color: aliceblue;
@@ -36,14 +34,24 @@ a{
 }
 
 .click{
-    position: relative;
-    text-align: center;
-    top: -290px;
-    font-size: 70px;
-    font-family: Blippo, fantasy;
+  position: relative;
+  text-align: center;
+  top: -290px;
+  font-size: 70px;
+  font-family: Blippo, fantasy;
 }
 
+@media screen and (max-width: 768px) {
+  .click {
+      font-size: 45px;
+  }
+}
 
+@media screen and (max-width: 480px) {
+  .click {
+      font-size: 30px;
+  }
+}
 
 
 @media screen and (max-device-width:480px){
@@ -56,7 +64,7 @@ a{
 		user-select: none; 
         margin: 0; 
         height: 100%; 
-        overflow: hidden;
+        overfloFhidden;
         
         
       }
@@ -80,27 +88,13 @@ a{
     }
 
     .coin{
-      position: fixed;
-      display: block;
       width: 400px;
-      height: 400px;
-      box-shadow: none;
-      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-      transition: all .2s ease-in-out;
+      position: fixed;
+      top: 50%;
       left: 50%;
-      transform: translateX(-50%);
-      bottom: 150px;
-      transition: transform 0.2s ease, opacity 0.2s ease;
+      transform: translate(-50%, -50%);
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     }
-    
-    .pressed {
-      transform: scale(0.9);
-      opacity: 0.7;
-    }
-    input:focus {
-        outline:none;
-    }
-
     .clicks{
         color: aliceblue;
         position: fixed;
